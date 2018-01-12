@@ -572,6 +572,12 @@ a:hover {
     width: 70%;
     margin: 0 5vw;
 }
+/*compatibility fix for firefox-flexbox */
+#donuts, #donuts .text {
+    min-height: 0;
+    min-width: 0;}
+/* === */
+
 #donuts {
     border: solid #dc1e35 3rem;
     width: 50vw;
@@ -587,28 +593,36 @@ a:hover {
 }
 #donuts .text {
     position: relative;
+    top:10vw;
     display: flex;
     display: -moz-flex;
     display: -ms-flex;
     display: -o-flex;
     display: -webkit-flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
 }
 #donuts h3 {
-    align-self: flex-end;
+    align-self: baseline;
     color: #333e48;
+    position: relative;
+    bottom: 2vw;
+    left:1vw;
+
 }
+#donuts h1{letter-spacing: -10px;}
 #donuts p {
-    margin: 1rem;
+    margin: 0 0 2% 3%;
 }
 #donuts .two-sixty-six-point {
     margin: 0 -2rem 0 -1rem;
 }
 #donuts img {
+    position:relative;
+    top:13vw;
     align-self: flex-end;
     margin: 1vw -8rem 0 0;
-    width: 35vw;
+    width: 45vw;
     overflow: visible;
     z-index: 4;
 }
@@ -712,6 +726,7 @@ a:hover {
     display: -ms-flex;
     display: -o-flex;
     display: -webkit-flex;
+    opacity: 0;
 }
 .award-logo {
     width: 50%;
@@ -744,16 +759,10 @@ a:hover {
     background-image: url("assets/InspirationDay/AnnualReport_ImageLinks_InspiratoinDay.jpg");
     background-size: cover;
     width: 100vw;
-    max-width: 1300px;
+
     height: 215.8vw;
-    max-height: 2805px;
-    display: flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    align-items: center;
+
+    display: block;
 
 }
 #inspiration-day div:not(.text) {
@@ -854,7 +863,7 @@ a:hover {
     background-color: #dc1e35;
     z-index: 4;
     padding: 1.5vw;
-    line-height: 1.3;
+    line-height: 1.1;
 
 }
 .modal {
@@ -867,12 +876,12 @@ a:hover {
     height: 100%; /* Full height */
     overflow: hidden; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 0 20px 20px 20px;
     width: 560px; /* Could be more or less, depending on screen size */
@@ -1020,7 +1029,7 @@ a:hover {
         width: 100%;
         height: 100vw;
     }
-    
+
 }
 
 @font-face {
@@ -1046,4 +1055,55 @@ a:hover {
     font-family: 'Miller Text Italic';
     src: local('Miller Text Italic'),
         url('assets/fonts/miller/MillerText-Italic.otf') format('opentype');
+}
+
+/*Scott Changes */
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 0px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.yesVideo {
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    position:absolute !important;
+    right: 0 !important;
+    bottom:-22.50% !important;}
+
+
+    @media only screen and (min-width: 321px)
+      and (max-width: 850px)  {
+          #awards h3 {padding:0 0 0 0px}
+.image-gallery p {padding:0 0 0 0px}
+#awards .award {position: relative; top: 20vw;}
+#awards > div > div:nth-child(5) {order:1}
+
+#awards > div > div:nth-child(6){order:2}
+#awards > div > div:nth-child(11) {order:3;}
+}
+@media only screen  and (min-width: 320px)
+  and (max-width: 480px)  {
+
+      #awards {margin: 0; width: 100%}
+      #awards .award {position: relative; top: 40vw;}
+      #awards .award:nth-child(1){order:1}
+      #awards .award:nth-child(3){order:2}
+      #awards .award:nth-child(5){order:3}
+      #awards .award:nth-child(8){order:5}
+      #awards > div > div:nth-child(11) {order: 6}
+      #awards > div > div:nth-child(6) {order:4 }
+
+
+
 }
