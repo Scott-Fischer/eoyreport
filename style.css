@@ -48,7 +48,7 @@ table {
 }
 /*end of css reset*/
 html {
-    font-size: calc( 6px + (16 - 6) * ( (100vw - 320px) / (1024 - 320) ));;
+    font-size: calc( 6px + (16 - 6) * ( (100vw - 320px) / (1800 - 320) ));;
 }
 body {
     width: 100%;
@@ -59,7 +59,7 @@ body {
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
     align-items: center;
-    font-size: calc( 6px + (16 - 6) * ( (100vw - 320px) / (1024 - 320) ));;
+    font-size: calc( 6px + (16 - 6) * ( (100vw - 320px) / (1800 - 320) ));;
     overflow-x: hidden;
 }
 p {
