@@ -759,11 +759,8 @@ a:hover {
     background-image: url("assets/InspirationDay/AnnualReport_ImageLinks_InspiratoinDay.jpg");
     background-size: cover;
     width: 100vw;
-
     height: 215.8vw;
-
     display: block;
-
 }
 #inspiration-day div:not(.text) {
     width: 65vw;
